@@ -1,0 +1,52 @@
+stories:
+  - story: greet
+    steps:
+      - or:
+          - intent: greet
+          - intent: bot_greet
+      - action: utter_greet
+      - action: utter_help_how
+
+  - story: bot capabilities
+    steps:
+      - intent: bot_capability
+      - action: utter_capability
+      - action: utter_any_other_query
+
+  - story: business query path
+    steps:
+      - or:
+          - intent: business_domain_query
+          - intent: business_size_query
+          - intent: provide_facility_query
+      - action: utter_can_help
+      - action: utter_client_acceptance
+      - checkpoint: check_if_user_agrees_to_work
+
+  - story: user affirms, if they agree to work with us
+    steps:
+      - checkpoint: check_if_user_agrees_to_work
+      - intent: affirm
+      - action: utter_register
+      - checkpoint: check_if_user_agrees_resgiter
+
+  - story: user denies, if dont want to work with us
+    steps:
+      - checkpoint: check_if_user_agrees_to_work
+      - intent: deny
+      - action: utter_any_other_query
+
+  - story: user agrees to register
+    steps:
+      - checkpoint: check_if_user_agrees_resgiter
+      - intent: affirm
+      - action: utter_website
+      - action: utter_goodbye
+
+  - story: user dont register
+    steps:
+      - checkpoint: check_if_user_agrees_resgiter
+      - or:
+          - intent: register
+          - intent: deny
+      - action: utter_any_other_query

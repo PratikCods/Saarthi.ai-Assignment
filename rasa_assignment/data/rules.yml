@@ -1,0 +1,22 @@
+version: "3.0"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: provide contact when user asks
+    steps:
+      - intent: contact
+      - action: utter_contact
+
+  - rule: Tell supported business scale anytime user asks for it
+    steps:
+      - intent: business_size
+      - action: utter_supported_sizes
+
+  - rule: Tell supported domains anytime user asks for it
+    steps:
+      - intent: business_domain
+      - action: utter_supported_domain

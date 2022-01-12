@@ -1,0 +1,83 @@
+version: "3.0"
+
+intents:
+  - greet
+  - thank
+  - goodbye
+  - affirm
+  - deny
+  - contact
+  - register
+  - bot_capability
+  - bot_greet
+  - bot_compliment
+  - business_domain
+  - business_domain_query
+  - business_size
+  - business_size_query
+  - provide_facility
+  - provide_facility_query
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_thank:
+    - text: "Happy to help you!"
+
+  utter_can_help:
+    - text: "yes, we can help you with that."
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_help_how:
+    - text: "How can I help you?"
+
+  utter_any_other_query:
+    - text: "Is there anything else, I can help you with?"
+
+  utter_client_acceptance:
+    - text: "Would you like to work with us?"
+
+  utter_website:
+    - text: "Please visit https://saarthi.ai/"
+
+  utter_react_positive:
+    - text: "I'm flattered to hear that."
+
+  utter_contact:
+    - text: "Please call us on (+91)8618064285 \nOr mail us at hello@saarthi.ai"
+
+  utter_register:
+    - text: "Would you liike to register?"
+
+  utter_list_domains:
+    - text: "We work in all sectors which requires chatbot and conversational ai systems"
+
+  utter_capability:
+    - text: "I am a chatbot designed to answer your queries.\nCurrently I can give you the details of facilities we provide.\nProvide contact details, if you have further interest."
+
+  utter_provide_assistance:
+    - text: "Yes, We have worked in that sector"
+
+  utter_supported_sizes:
+    - text: "We support all scales of businesses (small,medium,large)"
+
+  utter_supported_domain:
+    - text: "We support all domains of businesses"
+
+  utter_provide_facility:
+    - text: "we provide chatbots and voice over AI soultion to our clients"
+
+  utter_goodbye:
+    - text: "Bye"
+
+entities:
+  - service
+  - size
+  - domain
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
